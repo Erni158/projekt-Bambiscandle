@@ -3,6 +3,7 @@ import { Container, Row, Col } from 'react-bootstrap';
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
 import CloseIcon from '@material-ui/icons/Close';
+import candles from '../data/candles';
 
 const Style = styled.div`
     .offer{
@@ -40,42 +41,11 @@ const Oferta = () => {
         <Container>
             <Style>
                 <Row md={3} xs={1}>
-                    <Col>
-                        <h1 onClick={() => setIsOpen(!isOpen)} className="offer">Autumn Fire</h1>
-                    </Col>
-                    <Col>
-                        <h1 className="offer">Halloween</h1>
-                    </Col>
-                    <Col>
-                        <h1 className="offer">Enchanted Forest</h1>
-                    </Col>
-                    <Col>
-                        <h1 className="offer">Witch's Poison</h1>
-                    </Col>
-                    <Col>
-                        <h1 className="offer">Morning Coffee</h1>
-                    </Col>
-                    <Col>
-                        <h1 className="offer">Cotton Cloud</h1>
-                    </Col>
-                    <Col>
-                        <h1 className="offer">Tranquility</h1>
-                    </Col>
-                    <Col>
-                        <h1 className="offer">Yule's Eve</h1>
-                    </Col>
-                    <Col>
-                        <h1 className="offer">Winter Solstice</h1>
-                    </Col>
-                    <Col>
-                        <h1 className="offer">Mermaid</h1>
-                    </Col>
-                    <Col>
-                        <h1 className="offer">Witch's Infusion</h1>
-                    </Col>
-                    <Col>
-                        <h1 className="offer">Love Spell</h1>
-                    </Col>
+                    {candles.map(item => 
+                        <Col>
+                            <h1 onClick={() => setIsOpen(!isOpen)} className="offer">{item.name}</h1>
+                        </Col>
+                    )}
                 </Row>
             </Style>
         </Container>
