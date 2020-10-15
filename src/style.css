@@ -1,0 +1,12 @@
+#root {
+    width: 100%;
+    min-height: 100vh;
+    background-color: lightgray;
+}
+
+.candles {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+}
